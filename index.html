@@ -24,10 +24,10 @@
     --white:          #ffffff;
     --font-display:   'Playfair Display', Georgia, serif;
     --font-body:      'Outfit', system-ui, sans-serif;
-    --fs-3xl: clamp(2.4rem, 5.6vw, 4rem);
+    --fs-3xl: clamp(1.9rem, 3.6vw, 2.9rem);
     --fs-2xl: clamp(1.8rem, 3.6vw, 2.6rem);
     --fs-xl:  clamp(1.25rem, 2.4vw, 1.6rem);
-    --fs-lg:  clamp(1.05rem, 1.6vw, 1.2rem);
+    --fs-lg:  clamp(1rem, 1.3vw, 1.1rem);
     --fs-base: 1rem;
     --fs-sm:  0.875rem;
     --space-xs: .5rem;
@@ -63,6 +63,7 @@
   .navbar{
     position:fixed; top:0; left:0; right:0; z-index:50;
     display:flex; align-items:center; justify-content:space-between;
+    gap: var(--space-sm); flex-wrap:nowrap;
     padding: var(--space-md) var(--space-xl);
     transition: var(--transition);
     background: transparent;
@@ -75,9 +76,11 @@
     padding: var(--space-sm) var(--space-xl);
   }
   .navbar .logo{
-    font-family: var(--font-display); font-weight:700; font-size:1.3rem;
+    font-family: var(--font-display); font-weight:700;
+    font-size: clamp(.95rem, 3.6vw, 1.3rem);
     color: var(--nav-color, var(--white));
     letter-spacing:.5px;
+    white-space:nowrap;
     transition: var(--transition);
   }
   .navbar.scrolled .logo{ color: var(--secondary); }
@@ -88,6 +91,7 @@
     background: var(--primary);
     color: var(--secondary);
     font-size: var(--fs-sm); font-weight:600;
+    white-space:nowrap; flex-shrink:0;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
   }
@@ -105,7 +109,7 @@
     overflow:hidden;
     z-index: var(--z, 1);
   }
-  #hero{ --z: 1; background: var(--secondary); }
+  #hero{ --z: 1; background: var(--secondary); padding-top: 110px; padding-bottom: var(--space-lg); }
   #depoimentos{
     --z: 2;
     background: var(--primary);
@@ -141,15 +145,16 @@
   #hero h1{
     color: var(--primary);
     font-size: var(--fs-3xl);
-    max-width: 14ch;
+    line-height: 1.22;
+    max-width: 15ch;
   }
   #hero h1 em{
     font-style:normal; color: var(--primary); opacity:.6;
   }
   .hero-sub{
     color: var(--primary); opacity:.7;
-    font-size: var(--fs-lg); max-width: 42ch;
-    margin: var(--space-md) 0 var(--space-lg);
+    font-size: var(--fs-lg); max-width: 38ch;
+    margin: var(--space-sm) 0 var(--space-md);
   }
   .hero-ctas{ display:flex; gap: var(--space-sm); flex-wrap:wrap; }
   .btn{
@@ -285,16 +290,22 @@
   @media (max-width: 1024px){
     #hero .container{ grid-template-columns:1fr; text-align:center; }
     .hero-ctas{ justify-content:center; }
-    .hero-visual{ max-width:360px; margin:var(--space-lg) auto 0; }
+    .hero-visual{ max-width:320px; margin:var(--space-lg) auto 0; }
     .hero-eyebrow{ justify-content:center; }
+    .hero-sub{ margin-left:auto; margin-right:auto; }
   }
   @media (max-width: 768px){
     .navbar{ padding: var(--space-sm) var(--space-md); }
     .container{ padding: 0 var(--space-md); }
+    #hero{ padding-top: 100px; }
     #hero h1{ max-width:none; }
     .testimonial-card{ width:200px; }
   }
   @media (max-width: 480px){
+    .navbar{ padding: .8rem var(--space-md); }
+    .nav-cta{ padding:.6rem 1.1rem; font-size:.75rem; }
+    #hero{ padding-top: 90px; }
+    .hero-eyebrow{ font-size:.7rem; letter-spacing:.1em; }
     .contact-secondary{ flex-direction:column; width:100%; }
     .btn-outline{ justify-content:center; }
   }
