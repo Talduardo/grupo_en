@@ -136,9 +136,8 @@
     align-items:center;
     position:relative; z-index:2;
   }
-  .hero-copy{ grid-column:1; grid-row:1; }
-  .hero-visual{ grid-column:2; grid-row:1 / span 2; }
-  .hero-ctas{ grid-column:1; grid-row:2; }
+  .hero-left{ grid-column:1; }
+  .hero-visual{ grid-column:2; }
   .hero-eyebrow{
     display:inline-flex; align-items:center; gap:.6rem;
     color: var(--primary); opacity:.75;
@@ -293,9 +292,10 @@
 
   @media (max-width: 1024px){
     #hero .container{ grid-template-columns:1fr; text-align:center; }
-    .hero-copy{ grid-column:1; grid-row:auto; order:1; }
-    .hero-visual{ grid-column:1; grid-row:auto; order:2; }
-    .hero-ctas{ grid-column:1; grid-row:auto; order:3; }
+    .hero-left{ display:contents; }
+    .hero-copy{ order:1; }
+    .hero-visual{ order:2; }
+    .hero-ctas{ order:3; }
     .hero-ctas{ justify-content:center; }
     .hero-visual{ max-width:320px; margin:var(--space-lg) auto 0; }
     .hero-eyebrow{ justify-content:center; }
@@ -349,21 +349,23 @@
       </svg>
     </div>
     <div class="container">
-      <div class="hero-copy" data-animate>
-        <span class="hero-eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2v8a2 2 0 0 0 2 2v10M6 2v6M10 2v6M14 2v8"/><path d="M18 2c-2 0-3 2-3 5s1 5 3 5v10"/></svg>
-          Consultoria para o setor de alimentação
-        </span>
-        <h1>Sua cozinha já sabe cozinhar. <em>Nós ensinamos ela a faturar mais.</em></h1>
+      <div class="hero-left">
+        <div class="hero-copy" data-animate>
+          <span class="hero-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2v8a2 2 0 0 0 2 2v10M6 2v6M10 2v6M14 2v8"/><path d="M18 2c-2 0-3 2-3 5s1 5 3 5v10"/></svg>
+            Consultoria para o setor de alimentação
+          </span>
+          <h1>Sua cozinha já sabe cozinhar. <em>Nós ensinamos ela a faturar mais.</em></h1>
+        </div>
+        <div class="hero-ctas" data-animate>
+          <a href="#contato" class="btn btn-primary">Agende uma reunião</a>
+          <a href="#depoimentos" class="btn btn-ghost">Ver depoimentos</a>
+        </div>
       </div>
       <div class="hero-visual" data-animate>
         <div class="hero-photo-frame">
           <img src="hero_en.webp" alt="Consultor do Grupo EN Consultoria" loading="lazy">
         </div>
-      </div>
-      <div class="hero-ctas" data-animate>
-        <a href="#contato" class="btn btn-primary">Agende uma reunião</a>
-        <a href="#depoimentos" class="btn btn-ghost">Ver depoimentos</a>
       </div>
     </div>
   </section>
