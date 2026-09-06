@@ -172,7 +172,6 @@
 
   .hero-visual{ position:relative; }
   .hero-photo-frame{
-    
     position:relative; border-radius: var(--radius-lg); overflow:hidden;
     aspect-ratio: 4/5; box-shadow: 0 30px 70px rgba(0,0,0,.4);
   }
@@ -305,8 +304,11 @@
   @media (max-width: 480px){
     .navbar{ padding: .8rem var(--space-md); }
     .nav-cta{ padding:.6rem 1.1rem; font-size:.75rem; }
-    #hero{ padding-top: 90px; }
-    .hero-eyebrow{ font-size:.7rem; letter-spacing:.1em; }
+    #hero{ padding-top: 78px; padding-bottom: var(--space-sm); }
+    .hero-eyebrow{ font-size:.7rem; letter-spacing:.1em; margin-bottom: var(--space-sm); }
+    .hero-sub{ margin: var(--space-xs) 0 var(--space-sm); }
+    .hero-ctas{ gap: var(--space-xs); margin-bottom: var(--space-xs); }
+    .hero-visual{ max-width:230px; margin-top: var(--space-sm); }
     .contact-secondary{ flex-direction:column; width:100%; }
     .btn-outline{ justify-content:center; }
   }
