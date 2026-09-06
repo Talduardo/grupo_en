@@ -135,6 +135,9 @@
     align-items:center;
     position:relative; z-index:2;
   }
+  .hero-copy{ grid-column:1; grid-row:1; }
+  .hero-visual{ grid-column:2; grid-row:1 / span 2; }
+  .hero-ctas{ grid-column:1; grid-row:2; }
   .hero-eyebrow{
     display:inline-flex; align-items:center; gap:.6rem;
     color: var(--primary); opacity:.75;
@@ -289,6 +292,9 @@
 
   @media (max-width: 1024px){
     #hero .container{ grid-template-columns:1fr; text-align:center; }
+    .hero-copy{ grid-column:1; grid-row:auto; order:1; }
+    .hero-visual{ grid-column:1; grid-row:auto; order:2; }
+    .hero-ctas{ grid-column:1; grid-row:auto; order:3; }
     .hero-ctas{ justify-content:center; }
     .hero-visual{ max-width:320px; margin:var(--space-lg) auto 0; }
     .hero-eyebrow{ justify-content:center; }
@@ -307,7 +313,7 @@
     #hero{ padding-top: 78px; padding-bottom: var(--space-sm); }
     .hero-eyebrow{ font-size:.7rem; letter-spacing:.1em; margin-bottom: var(--space-sm); }
     .hero-sub{ margin: var(--space-xs) 0 var(--space-sm); }
-    .hero-ctas{ gap: var(--space-xs); margin-bottom: var(--space-xs); }
+    .hero-ctas{ gap: var(--space-xs); margin-top: var(--space-md); margin-bottom: var(--space-xs); }
     .hero-visual{ max-width:230px; margin-top: var(--space-sm); }
     .contact-secondary{ flex-direction:column; width:100%; }
     .btn-outline{ justify-content:center; }
@@ -348,15 +354,15 @@
           Consultoria para o setor de alimentação
         </span>
         <h1>Sua cozinha já sabe cozinhar. <em>Nós ensinamos ela a faturar mais.</em></h1>
-        <div class="hero-ctas">
-          <a href="#contato" class="btn btn-primary">Agende uma reunião</a>
-          <a href="#depoimentos" class="btn btn-ghost">Ver depoimentos</a>
-        </div>
       </div>
       <div class="hero-visual" data-animate>
         <div class="hero-photo-frame">
           <img src="hero_en.webp" alt="Consultor do Grupo EN Consultoria" loading="lazy">
         </div>
+      </div>
+      <div class="hero-ctas" data-animate>
+        <a href="#contato" class="btn btn-primary">Agende uma reunião</a>
+        <a href="#depoimentos" class="btn btn-ghost">Ver depoimentos</a>
       </div>
     </div>
   </section>
